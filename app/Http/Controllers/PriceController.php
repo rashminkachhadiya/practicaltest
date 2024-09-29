@@ -51,7 +51,10 @@ class PriceController extends Controller
      */
     public function create()
     {
-        return view('price.create');
+        $total_percentage = Price::sum('probability_percentage');
+        $rest = floatval(100) - floatval($total_percentage);
+        $msg = 'Sum of all prizes probability must be 100%. Currently its '. $total_percentage .'% You have yet to add '. $rest .'% to the prize.';
+        return view('price.create', compact('msg'));
     }
 
     /**

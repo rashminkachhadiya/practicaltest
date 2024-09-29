@@ -5,6 +5,9 @@
         <div class="col-md-12 col-sm-12">
             <div class="main-card card mb-3">
                 <div class="card-body">
+                    <div class="alert alert-danger">
+                        {{ $msg }}
+                    </div>
                     <div class="tab-content" id="ex1-content">
                       <div class="tab-pane fade show active" id="tab-product-details" role="tabpanel" aria-labelledby="ex1-tab-1">
                         {!! Form::open(['route' => 'price.store']) !!}
